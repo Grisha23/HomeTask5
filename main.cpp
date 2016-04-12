@@ -5,7 +5,7 @@
 #include "string.h"
 
 
-void enter_from_keyboard(Stack *stack)
+void enter_from_keyboard(Stack &stack)
 {
     std::string tmp;
 
@@ -17,7 +17,7 @@ void enter_from_keyboard(Stack *stack)
 
         try
         {
-            (stack)->push(std::stoi(tmp));
+            stack.push(std::stoi(tmp));
         }
         catch (std::exception e)
         {
@@ -66,7 +66,7 @@ int main() {
     for (int j = 0; j < n; ++j)
     {
         Stack *stack = new Stack();
-        enter_from_keyboard(stack);
+        enter_from_keyboard(*stack);
         arr[j] = stack;
         if (!(arr[j]->del_odd())) std::cout<< "error: не получилось удалить нечетные (по номеру сверху) элементы, т.к. стек пуст." << std::endl;
     }

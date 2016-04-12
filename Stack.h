@@ -34,6 +34,8 @@ public:
 
     friend std::ostream& operator << (std::ostream &ostream, const Stack &stack);
 
+    friend void enter_from_keyboard(Stack &stack);
+
 
 
 };
