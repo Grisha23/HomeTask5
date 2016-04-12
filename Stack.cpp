@@ -55,7 +55,7 @@ int Stack::clear()
     this->capacity = 0;
 }
 
-bool Stack::empty()
+bool Stack::isEmpty()
 {
     return (size==0);
 }
@@ -122,7 +122,7 @@ int Stack::get_capacity()
 int Stack::del_odd()
 // Метод удаляет все нечетные по номеру элементы сверху. Т.е. 1-й, 3-й и тд сверху.
 {
-    if (this->empty()) return 0; //Стек пуст.
+    if (this->isEmpty()) return 0; //Стек пуст.
 
     int size = this->get_size();
     int *array;

@@ -28,7 +28,7 @@ public:
     int get_size(); //
     int get_capacity();
     int pop(); //Возвращает значение удаленного элемента
-    bool empty(); //
+    bool isEmpty(); //
 
     int del_odd();
 
