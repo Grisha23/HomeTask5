@@ -119,16 +119,46 @@ int Stack::get_capacity()
     return this->capacity;
 }
 
-int Stack::print()
+int Stack::del_odd()
+// Метод удаляет все нечетные по номеру элементы сверху. Т.е. 1-й, 3-й и тд сверху.
 {
-    if (size == 0) return 0; // Стек пуст
+    if (this->empty()) return 0; //Стек пуст.
 
-    std::cout << "Элементы стека: " << std::endl;
-
-    for (int i = this->size - 1; i >= 0; --i)
+    int size = this->get_size();
+    int *array;
+    int arr_size = 0; // Размер массива, в который перезаписываются все ЧЕТНЫЕ элементы.
+    if (size % 2 == 0)
     {
-        std::cout << this->elem[i] << std::endl;
+        array = new int[size - (size / 2)];
+        arr_size = size / 2;
     }
+    else
+    {
+        int tmp = (double) size / 2 + 0.5;
+        arr_size = size - tmp;
+        array = new int[arr_size]; // (size - tmp) это количество четных элементов. size - все. tmp удаленные(нечетн)
+
+    }
+    int count = 0; // счетчик
+    for (int i = 1; i <= size; ++i)
+    {
+        if (i % 2 == 0)
+        {
+            array[count] = this->pop(); // Четные перезаписываем в массив.
+            count++;
+        }
+        else
+        {
+            this->pop(); //
+        }
+    }
+
+    for (int j = arr_size - 1; j >= 0; --j)
+    {
+        this->push(array[j]);
+    }
+
+    delete[] array;
 
     return 1;
 }

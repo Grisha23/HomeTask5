@@ -28,9 +28,11 @@ public:
     int get_size(); //
     int get_capacity();
     int pop(); //Возвращает значение удаленного элемента
-    bool empty(); // Возвращает true , если стек пуст
-    int print(); // Возвр. 0 если стек пуст
+    bool empty(); //
 
+    int del_odd();
+
+    friend std::ostream& operator << (std::ostream &ostream, const Stack &stack);
 
 
 
