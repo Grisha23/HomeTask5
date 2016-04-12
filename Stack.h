@@ -33,8 +33,9 @@ public:
     int del_odd();
 
     friend std::ostream& operator << (std::ostream &ostream, const Stack &stack);
+    friend std::istream operator >> (std::istream istream, Stack &stack);
 
-    friend void enter_from_keyboard(Stack &stack);
+    //friend std::istream enter_from_keyboard(std::istream istream, Stack &stack);
 
 
 
